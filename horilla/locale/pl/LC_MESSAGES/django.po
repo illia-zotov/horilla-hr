@@ -45,7 +45,7 @@ msgid "Employee Type"
 msgstr "Typ pracownika"
 
 msgid "Job Role"
-msgstr "Rola zawodowa"
+msgstr "Rola stanowiskowa"
 
 msgid "Company"
 msgstr "Firma"
@@ -449,7 +449,7 @@ msgid "Dashboard"
 msgstr "Panel nawigacyjny"
 
 msgid "Requests & Allocation"
-msgstr "Żądania i alokacja"
+msgstr "Wnioski i przydziały"
 
 msgid "Update"
 msgstr "Aktualizuj"
@@ -1109,7 +1109,7 @@ msgid "Attandance Updated"
 msgstr "Obecność zaktualizowana"
 
 msgid "Leave Type"
-msgstr "Zostaw typ"
+msgstr "Rodzaj urlopu"
 
 msgid "Minus Days"
 msgstr "Minusowe dni"
@@ -4694,7 +4694,7 @@ msgid "Apply Leave"
 msgstr "Zastosuj urlop"
 
 msgid "Payslips"
-msgstr "Paski wypłat"
+msgstr "Paski wynagrodzeń"
 
 msgid "My Profile"
 msgstr "Mój profil"
@@ -5279,7 +5279,7 @@ msgid "Update Ticket Type"
 msgstr "Zaktualizuj typ biletu"
 
 msgid "Ticket Type"
-msgstr "Typ biletu"
+msgstr "Typ zgłoszenia"
 
 msgid "Prefix"
 msgstr "Przedrostek"
@@ -8574,7 +8574,7 @@ msgid "Leave type icon"
 msgstr "Pozostaw ikonę typu"
 
 msgid "Leave Request"
-msgstr "Zostaw prośbę"
+msgstr "Wniosek urlopowy"
 
 msgid "Logout"
 msgstr "Wyloguj się"
@@ -9262,7 +9262,7 @@ msgid "The FAQ created successfully."
 msgstr "FAQ zostało utworzone pomyślnie."
 
 msgid "Tickets"
-msgstr "Bilety"
+msgstr "Zgłoszenia"
 
 msgid "Owner"
 msgstr "Właściciel"
@@ -9310,7 +9310,7 @@ msgid "Department Managers"
 msgstr "Menedżerowie działów"
 
 msgid "Helpdesk Tags"
-msgstr "Tagi centrum pomocy"
+msgstr "Tagi działu wsparcia"
 
 msgid "Are you sure you want to delete this tag?"
 msgstr "Czy na pewno chcesz usunąć ten tag?"
@@ -9322,10 +9322,10 @@ msgid "Ticket type has been created successfully!"
 msgstr "Typ biletu został pomyślnie utworzony!"
 
 msgid "Create Ticket"
-msgstr "Utwórz bilet"
+msgstr "Utwórz zgłoszenie"
 
 msgid "Update Ticket"
-msgstr "Zaktualizuj bilet"
+msgstr "Aktualizuj zgłoszenie"
 
 msgid "The Ticket created successfully."
 msgstr "Bilet został utworzony pomyślnie."
@@ -9376,13 +9376,13 @@ msgid "Others"
 msgstr "Inni"
 
 msgid "Ticket Types"
-msgstr "Rodzaje biletów"
+msgstr "Typy zgłoszeń"
 
 msgid "Forward To"
 msgstr "Przekaż do"
 
 msgid "Ticket"
-msgstr "Bilet"
+msgstr "Zgłoszenie"
 
 msgid "Due today"
 msgstr "Termin na dzisiaj"
@@ -9406,7 +9406,7 @@ msgid "FAQs"
 msgstr "Często zadawane pytania"
 
 msgid "Helpdesk"
-msgstr "Pomoc techniczna"
+msgstr "Dział wsparcia"
 
 msgid "Assign managers responsible for helpdesk tickets per department."
 msgstr "Przypisz menedżerów odpowiedzialnych za zgłoszenia do działu pomocy technicznej dla poszczególnych działów."
@@ -9433,7 +9433,7 @@ msgid "Till date"
 msgstr "Do chwili obecnej"
 
 msgid "Helpdesk Dashboard"
-msgstr "Panel pomocy technicznej"
+msgstr "Panel działu wsparcia"
 
 msgid "Pipeline View"
 msgstr "Widok rurociągu"
@@ -11202,7 +11202,7 @@ msgid "Are you sure you want to delete this stage?"
 msgstr "Czy na pewno chcesz usunąć ten etap?"
 
 msgid "Time sheet"
-msgstr "Arkusz czasu"
+msgstr "Ewidencja czasu pracy"
 
 msgid "Do you want to delete this task?"
 msgstr "Czy chcesz usunąć to zadanie?"
@@ -12371,7 +12371,7 @@ msgid "Loan Settled"
 msgstr "Pożyczka rozliczona"
 
 msgid "Payslip"
-msgstr "odcinek wypłaty"
+msgstr "Pasek wynagrodzenia"
 
 msgid "Do you want to send the payslip by mail?"
 msgstr "Czy chcesz wysłać odcinek wypłaty pocztą?"
@@ -13502,7 +13502,7 @@ msgid "Leave Clash"
 msgstr "Opuść Clash"
 
 msgid "Leave Requests"
-msgstr "Żądania opuszczenia"
+msgstr "Wnioski urlopowe"
 
 msgid "Leave request is updated successfully"
 msgstr "Żądanie opuszczenia zostało pomyślnie zaktualizowane"
@@ -13529,7 +13529,7 @@ msgid "Un Paid"
 msgstr "Niezapłacone"
 
 msgid "Leave Types"
-msgstr "Zostaw typy"
+msgstr "Rodzaje urlopów"
 
 msgid "Period In"
 msgstr "Okres w"
@@ -14028,7 +14028,7 @@ msgid "LEAVE REPORT"
 msgstr "WYJDŹ RAPORT"
 
 msgid "Leaves"
-msgstr "Liście"
+msgstr "Urlopy"
 
 msgid "Leave Periods"
 msgstr "Okresy urlopowe"
@@ -20173,7 +20173,7 @@ msgstr "Ustawienia punktów bonusowych"
 
 #: terminology-rename:1
 msgid "Requests"
-msgstr "Żądania"
+msgstr "Wnioski"
 
 #: terminology-rename:1
 msgid "Daily Work Status"
@@ -20225,7 +20225,7 @@ msgstr "Integracja z WhatsApp"
 
 #: terminology-rename:1
 msgid "Timesheets"
-msgstr "Karty czasu pracy"
+msgstr "Ewidencja czasu pracy"
 
 #: terminology-rename:1
 msgid "Update Timesheet"
