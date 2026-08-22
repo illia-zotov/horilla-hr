@@ -201,7 +201,7 @@ msgid "Do you really want to unarchive all the selected records?"
 msgstr "Ви справді хочете розархівувати всі вибрані записи?"
 
 msgid "Ok"
-msgstr "добре"
+msgstr "Добре"
 
 msgid "Total vacancy is %(vacancy)s."
 msgstr "Усього вакансій: %(vacancy)s."

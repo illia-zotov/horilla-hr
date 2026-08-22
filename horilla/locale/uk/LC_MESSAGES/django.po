@@ -505,7 +505,7 @@ msgid "chevron forward outline"
 msgstr "chevron forward outline"
 
 msgid "available"
-msgstr "Доступний"
+msgstr "доступний"
 
 msgid "by "
 msgstr "від "
@@ -652,7 +652,7 @@ msgid "Total Assets"
 msgstr "Всього активів"
 
 msgid "in use"
-msgstr "У використанні"
+msgstr "у використанні"
 
 msgid "Pending Requests"
 msgstr "Заявки в очікуванні"
@@ -1887,7 +1887,7 @@ msgid "Attendance Dashboard"
 msgstr "Дашборд відвідуваності"
 
 msgid "Customize dashboard"
-msgstr "налаштувати дашборд"
+msgstr "Налаштувати дашборд"
 
 msgid "Clock-in Distribution"
 msgstr "Розподіл приходів"
@@ -2031,7 +2031,7 @@ msgid "Rate"
 msgstr "Ставка"
 
 msgid "By department"
-msgstr "за відділом"
+msgstr "За відділом"
 
 msgid "No late/early records"
 msgstr "Немає записів запізнень/ранніх виходів"
@@ -2064,7 +2064,7 @@ msgid "Week of"
 msgstr "Тиждень від"
 
 msgid "present"
-msgstr "Присутній"
+msgstr "присутній"
 
 msgid "absenteeism"
 msgstr "відсутність"
@@ -2073,7 +2073,7 @@ msgid "Avg Hrs/Day"
 msgstr "Сер. год/день"
 
 msgid "8h target"
-msgstr "Ціль 8 год"
+msgstr "ціль 8 год"
 
 msgid "No work type data"
 msgstr "Немає даних про типи роботи"
@@ -4152,7 +4152,7 @@ msgid "Microsoft Exchange or Outlook SMTP integration"
 msgstr "Інтеграція SMTP з Microsoft Exchange або Outlook"
 
 msgid "Organization"
-msgstr "організація"
+msgstr "Організація"
 
 msgid "Company Name"
 msgstr "Назва компанії"
@@ -5419,7 +5419,7 @@ msgstr ""
 "                        "
 
 msgid "finish setup to unlock your full HR system"
-msgstr "Завершіть налаштування, щоб відкрити повну HR-систему"
+msgstr "завершіть налаштування, щоб відкрити повну HR-систему"
 
 msgid "Dismiss setup checklist"
 msgstr "Приховати чек-лист налаштування"
@@ -5451,7 +5451,7 @@ msgid "complete"
 msgstr "завершено"
 
 msgid "next step"
-msgstr "Наступний крок"
+msgstr "наступний крок"
 
 msgid "Schedules"
 msgstr "Графіки"
@@ -9655,7 +9655,7 @@ msgid "Ticket"
 msgstr "Заявка"
 
 msgid "Due today"
-msgstr "дедлайн сьогодні"
+msgstr "Дедлайн сьогодні"
 
 msgid "Overdue by {} days"
 msgstr "Прострочено на {} днів"
@@ -9761,10 +9761,10 @@ msgid "Open Tickets"
 msgstr "Відкриті заявки"
 
 msgid "new"
-msgstr "Нова"
+msgstr "нова"
 
 msgid "in progress"
-msgstr "В процесі"
+msgstr "в процесі"
 
 msgid "Resolution Rate"
 msgstr "Рівень вирішення"
@@ -11123,7 +11123,7 @@ msgid "Click to rename"
 msgstr "Натисніть, щоб перейменувати"
 
 msgid "permissions"
-msgstr "Дозволи"
+msgstr "дозволи"
 
 msgid ""
 "Delete this role? Employees will keep their accounts, but will no longer get"
@@ -11239,7 +11239,7 @@ msgid "Search permissions"
 msgstr "Пошук дозволів"
 
 msgid "selected"
-msgstr "Вибрано"
+msgstr "вибрано"
 
 msgid "No features match your search."
 msgstr "Жодна функція не відповідає пошуку."
@@ -11273,7 +11273,7 @@ msgid "Select all for this module"
 msgstr "Вибрати все для цього модуля"
 
 msgid "Feature"
-msgstr "функція"
+msgstr "Функція"
 
 msgid "Can export"
 msgstr "Може експортувати"
@@ -12191,7 +12191,7 @@ msgstr ""
 "відпусток."
 
 msgid "Leave Dashboard"
-msgstr "дашборд відпусток"
+msgstr "Дашборд відпусток"
 
 msgid "Leave Request Trend"
 msgstr "Тенденція заявок на відпустку"
@@ -12711,13 +12711,13 @@ msgid "payslips"
 msgstr "розрахункові листки"
 
 msgid "total"
-msgstr "Усього"
+msgstr "усього"
 
 msgid "No active loans"
 msgstr "Немає активних позик"
 
 msgid "Pending requests"
-msgstr "заявки в очікуванні"
+msgstr "Заявки в очікуванні"
 
 msgid "No payslips this month"
 msgstr "Цього місяця немає розрахункових листків"
@@ -12810,7 +12810,7 @@ msgid "Taxable Gross Pay"
 msgstr "Оподатковувана валова зарплата"
 
 msgid "Taxable amount"
-msgstr "сума, що оподатковується"
+msgstr "Сума, що оподатковується"
 
 msgid "Employee Details"
 msgstr "Дані працівника"
@@ -12944,7 +12944,7 @@ msgid "Add note"
 msgstr "Додати нотатку"
 
 msgid "At"
-msgstr "в"
+msgstr "В"
 
 msgid "Candidate can view this note"
 msgstr "Кандидат може переглядати цю примітку"
@@ -12972,7 +12972,7 @@ msgid "View Policy"
 msgstr "Переглянути політику"
 
 msgid " - Open Recruitments"
-msgstr " - відкриті набори"
+msgstr " - Відкриті набори"
 
 msgid "Open Job Listings"
 msgstr "Відкриті вакансії"
@@ -13100,7 +13100,7 @@ msgid "Asset User Badge Id"
 msgstr "Бейдж користувача активу"
 
 msgid "Equals"
-msgstr "дорівнює"
+msgstr "Дорівнює"
 
 msgid "Not Equals"
 msgstr "Не дорівнює"
@@ -13447,7 +13447,7 @@ msgid "Basic"
 msgstr "Базовий оклад"
 
 msgid "years"
-msgstr "Роки"
+msgstr "роки"
 
 msgid "Emergency contact"
 msgstr "Контакт для екстрених випадків"
@@ -13870,7 +13870,7 @@ msgid "Item"
 msgstr "Елемент"
 
 msgid "filter"
-msgstr "Фільтр"
+msgstr "фільтр"
 
 msgid "Page 1 of 1"
 msgstr "Сторінка 1 з 1"
@@ -15178,7 +15178,7 @@ msgid "Offboarding Dashboard"
 msgstr "Дашборд звільнень"
 
 msgid "Offboarding Pipeline"
-msgstr "процес офбординг"
+msgstr "Процес офбординг"
 
 msgid "Employees by stage"
 msgstr "Працівники за етапами"
@@ -15491,7 +15491,7 @@ msgid "Onboarding Portal Stage"
 msgstr "Етап порталу онбордингу"
 
 msgid "Pipeline"
-msgstr "воронка підбору"
+msgstr "Воронка підбору"
 
 msgid "Rating"
 msgstr "Оцінка"
@@ -16709,7 +16709,7 @@ msgid "out of"
 msgstr "з"
 
 msgid "installments"
-msgstr "Платежі частинами"
+msgstr "платежі частинами"
 
 msgid "Loan Filter"
 msgstr "Фільтр позик"
@@ -17181,7 +17181,7 @@ msgid "The initial notice period has been successfully updated."
 msgstr "Початковий термін попередження успішно оновлено."
 
 msgid "created"
-msgstr "Створено"
+msgstr "створено"
 
 msgid "Invalid request. Missing required parameters."
 msgstr "Невірний запит. Відсутні обов'язкові параметри."
@@ -17656,7 +17656,7 @@ msgid "Are you sure you want to delete this Key result?"
 msgstr "Ви впевнені, що хочете видалити цей ключовий результат?"
 
 msgid "due"
-msgstr "Термін"
+msgstr "термін"
 
 msgid "in"
 msgstr "в"
@@ -17979,7 +17979,7 @@ msgid "Next 14 days"
 msgstr "Наступні 14 днів"
 
 msgid "completed"
-msgstr "Завершено"
+msgstr "завершено"
 
 msgid "Avg Progress"
 msgstr "Сер. прогрес"
@@ -17991,7 +17991,7 @@ msgid "Objectives need attention"
 msgstr "Цілі потребують уваги"
 
 msgid "pending"
-msgstr "Очікується"
+msgstr "очікується"
 
 msgid "All reviewed"
 msgstr "Усі переглянуті"
@@ -19566,7 +19566,7 @@ msgid "HR Manager"
 msgstr "Менеджер з персоналу"
 
 msgid "posted on"
-msgstr "Опубліковано"
+msgstr "опубліковано"
 
 msgid "LinkedIn account"
 msgstr "Обліковий запис LinkedIn"
@@ -20124,7 +20124,7 @@ msgid "Leave Analytics"
 msgstr "Аналітика відпусток"
 
 msgid "this month"
-msgstr "Цього місяця"
+msgstr "цього місяця"
 
 msgid "No new joiners"
 msgstr "Немає нових працівників"
