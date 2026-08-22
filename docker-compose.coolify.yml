@@ -115,7 +115,12 @@ services:
       retries: 5
 
   nginx:
-    image: nginx:alpine
+    # Built, not pulled: docker/nginx.conf is baked into the image because
+    # Coolify cannot bind-mount a single file from the repo (see
+    # docker/nginx.Dockerfile).
+    build:
+      context: .
+      dockerfile: docker/nginx.Dockerfile
     environment:
       # The only published service in this stack. Bare (no "=value") on purpose:
       # this form asks Coolify to generate the domain AND point Traefik at
@@ -129,7 +134,6 @@ services:
       # Static only -- /media/ is proxied to Django (protected_media). Do not
       # mount the media volume here; an alias location would bypass auth.
       - staticfiles:/static:ro
-      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       web:
         condition: service_healthy
