@@ -301,7 +301,7 @@ class StageDuplicateForm(HorillaFormView):
                 form.initial[field_name] = initial_value
                 form.fields[field_name].initial = initial_value
         context["form"] = form
-        self.form_class.verbose_name = "Duplicate"
+        self.form_class.verbose_name = _("Duplicate")
         return context
 
     def form_valid(self, form: StageCreationForm) -> HttpResponse:

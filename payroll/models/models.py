@@ -1277,7 +1277,7 @@ class Allowance(HorillaModel):
             specific_employee_names = ", ".join(
                 str(employee.get_full_name()) for employee in specific_employees
             )
-            label = "Specific Employees"
+            label = _("Specific Employees")
 
             col += format_html(
                 """
@@ -1301,7 +1301,7 @@ class Allowance(HorillaModel):
             exclude_employee_names = ", ".join(
                 str(employee.get_full_name()) for employee in exclude_employees
             )
-            label = "Excluded Employees"
+            label = _("Excluded Employees")
             col += format_html(
                 """
                     <div class="col-span-1 md:col-span-6 mb-2 flex gap-5 items-center">
@@ -1769,7 +1769,7 @@ class Deduction(HorillaModel):
             specific_employee_names = ", ".join(
                 str(employee.get_full_name()) for employee in specific_employees
             )
-            label = "Specific Employees"
+            label = _("Specific Employees")
 
             col += format_html(
                 """
@@ -1793,7 +1793,7 @@ class Deduction(HorillaModel):
             exclude_employee_names = ", ".join(
                 str(employee.get_full_name()) for employee in exclude_employees
             )
-            label = "Excluded Employees"
+            label = _("Excluded Employees")
             col += format_html(
                 """
                     <div class="col-span-1 md:col-span-6 mb-2 flex gap-5 items-center">
@@ -2308,7 +2308,7 @@ class Reimbursement(HorillaModel):
         choices=reimbursement_types, max_length=16, default="reimbursement"
     )
     employee_id = models.ForeignKey(
-        Employee, on_delete=models.PROTECT, verbose_name="Employee"
+        Employee, on_delete=models.PROTECT, verbose_name=_("Employee")
     )
     allowance_on = models.DateField()
     attachment = models.FileField(upload_to=upload_path, null=True)
@@ -2629,7 +2629,7 @@ class EncashmentGeneralSettings(models.Model):
     """
 
     bonus_amount = models.IntegerField(default=1)
-    leave_amount = models.IntegerField(blank=True, null=True, verbose_name="Amount")
+    leave_amount = models.IntegerField(blank=True, null=True, verbose_name=_("Amount"))
     objects = models.Manager()
 
 

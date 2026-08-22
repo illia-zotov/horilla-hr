@@ -1255,7 +1255,7 @@ def _permission_app_label(app_name):
         label = label.title()
     # Sidebar-friendly short label for Django auth
     if app_name == "auth":
-        label = "Auth"
+        label = _("Auth")
     return label
 
 
@@ -8580,10 +8580,10 @@ def protected_media(request, path):
         media_path = safe_join(settings.MEDIA_ROOT, path)
     except Exception:
         # safe_join raises ValueError if traversal detected
-        raise Http404("Invalid file path")
+        raise Http404(_("Invalid file path"))
 
     if not os.path.exists(media_path) or not os.path.isfile(media_path):
-        raise Http404("File not found")
+        raise Http404(_("File not found"))
 
     is_public_asset = any(path.startswith(prefix) for prefix in public_media_prefixes)
 

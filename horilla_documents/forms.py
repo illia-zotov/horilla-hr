@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from django import forms
 from django.template.loader import render_to_string
 
@@ -44,7 +45,7 @@ class DocumentRequestForm(ModelForm):
                 required=True,
                 instance=self.instance,
             ),
-            label="Employee",
+            label=_("Employee"),
         )
         reload_queryset(self.fields)
 
@@ -91,7 +92,7 @@ class DocumentUpdateForm(ModelForm):
 
     cols = {"document": 12}
 
-    verbose_name = "Document"
+    verbose_name = _("Document")
 
     class Meta:
         model = Document

@@ -16,10 +16,10 @@ class WhatsappCredientials(HorillaModel):
     created_templates = models.BooleanField(default=False)
     meta_webhook_token = models.CharField(
         max_length=50,
-        verbose_name="Webhook Token",
+        verbose_name=_("Webhook Token"),
         help_text=_("This token is used to connect webhook to the server"),
     )
-    company_id = models.ManyToManyField(Company, blank=True, verbose_name="Company")
+    company_id = models.ManyToManyField(Company, blank=True, verbose_name=_("Company"))
     is_primary = models.BooleanField(default=False)
 
     objects = HorillaCompanyManager()

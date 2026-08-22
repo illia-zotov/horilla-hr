@@ -501,7 +501,7 @@ class LeaveOneAssignForm(HorillaModelForm):
             filter_template_path="employee_filters.html",
             required=True,
         ),
-        label="Employee",
+        label=_("Employee"),
     )
 
     class Meta:
@@ -953,7 +953,7 @@ class AssignLeaveForm(HorillaForm):
             attrs={"class": "oh-select oh-select-2 mb-2", "required": True}
         ),
         empty_label=None,
-        label="Leave Type",
+        label=_("Leave Type"),
         required=False,
     )
     employee_id = HorillaMultiSelectField(
@@ -965,7 +965,7 @@ class AssignLeaveForm(HorillaForm):
             filter_template_path="employee_filters.html",
             required=True,
         ),
-        label="Employee",
+        label=_("Employee"),
     )
 
     def clean(self):
@@ -985,7 +985,7 @@ class AssignLeaveForm(HorillaForm):
         self.fields["employee_id"].widget.attrs.update(
             {"required": True, "id": uuid.uuid4()}
         ),
-        self.fields["leave_type_id"].label = "Leave Type"
+        self.fields["leave_type_id"].label = _("Leave Type")
 
 
 class LeaverequestcommentForm(BaseModelForm):
@@ -1007,7 +1007,7 @@ class LeaveCommentForm(BaseModelForm):
     Leave request comment model form
     """
 
-    verbose_name = "Add Comment"
+    verbose_name = _("Add Comment")
 
     class Meta:
         """
@@ -1019,7 +1019,7 @@ class LeaveCommentForm(BaseModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["files"] = MultipleFileField(label="files")
+        self.fields["files"] = MultipleFileField(label=_("files"))
         self.fields["files"].widget.attrs["accept"] = ".jpg, .jpeg, .png, .pdf"
 
         self.fields["files"].required = False
@@ -1069,7 +1069,7 @@ class LeaveAllocationCommentForm(BaseModelForm):
     Leave request comment model form
     """
 
-    verbose_name = "Add Comment"
+    verbose_name = _("Add Comment")
 
     class Meta:
         """
@@ -1081,7 +1081,7 @@ class LeaveAllocationCommentForm(BaseModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["files"] = MultipleFileField(label="files")
+        self.fields["files"] = MultipleFileField(label=_("files"))
         self.fields["files"].required = False
 
     def as_p(self):

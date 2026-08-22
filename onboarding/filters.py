@@ -2,6 +2,7 @@
 filters.py
 Used to register filter for onboarding models
 """
+from django.utils.translation import gettext_lazy as _
 
 import django_filters
 from django import forms
@@ -310,29 +311,29 @@ class OnboardingStageFilter(HorillaFilterSet):
     )
 
     employee_id = filters.ModelChoiceFilter(
-        queryset=Employee.objects.all(), label="Stage Manager"
+        queryset=Employee.objects.all(), label=_("Stage Manager")
     )
 
     onboarding_task__task_title = filters.CharFilter(
-        field_name="onboarding_task__task_title", lookup_expr="icontains", label="Task"
+        field_name="onboarding_task__task_title", lookup_expr="icontains", label=_("Task")
     )
 
     onboarding_task__employee_id = filters.ModelChoiceFilter(
         field_name="onboarding_task__employee_id",
         queryset=Employee.objects.all(),
-        label="Task Manager",
+        label=_("Task Manager"),
     )
 
     recruitment_id__company_id = filters.ModelChoiceFilter(
         field_name="recruitment_id__company_id",
         queryset=Company.objects.all(),
-        label="Company",
+        label=_("Company"),
     )
 
     onboarding_task__candidates = filters.ModelChoiceFilter(
         field_name="onboarding_task__candidates",
         queryset=Candidate.objects.all(),
-        label="Candidates",
+        label=_("Candidates"),
     )
 
     class Meta:

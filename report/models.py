@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 from base.horilla_company_manager import HorillaCompanyManager
@@ -13,9 +14,9 @@ class ReportTemplate(HorillaModel):
     layout later instead of rebuilding it from scratch each time.
     """
 
-    report_slug = models.CharField(max_length=100, verbose_name="Report")
-    name = models.CharField(max_length=100, verbose_name="Template Name")
-    config = models.JSONField(verbose_name="Field Arrangement")
+    report_slug = models.CharField(max_length=100, verbose_name=_("Report"))
+    name = models.CharField(max_length=100, verbose_name=_("Template Name"))
+    config = models.JSONField(verbose_name=_("Field Arrangement"))
     company_id = models.ForeignKey(
         Company, null=True, editable=False, on_delete=models.PROTECT
     )

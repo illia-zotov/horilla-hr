@@ -156,7 +156,7 @@
         <span
             data-toggle="oh-modal-toggle"
             data-target="#filterChoose{{section_id}}"
-            title="Filter and Choose {{field.label}}"
+            title="{% blocktrans with label=field.label %}Filter and Choose {{ label }}{% endblocktrans %}"
             class="text-primary-600"
             style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 5; cursor: pointer; display: flex; align-items: center; font-size: 0.75rem;"
         >

@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2026 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 msgid ""
 msgstr ""
@@ -10,121 +10,123 @@ msgstr ""
 "POT-Creation-Date: 2026-08-02 17:21+0530\n"
 "PO-Revision-Date: 2026-08-22 00:00+0300\n"
 "Last-Translator: Horilla Ukrainian Localization\n"
-"Language-Team: Ukrainian\n"
-"Language: uk\n"
+"Language: pl\n"
+"Language-Team: Polski\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Generated-By: Babel 2.10.3\n"
+
 #: notifications/admin.py:13
 msgid "Mark selected notifications as unread"
-msgstr "Позначити вибрані сповіщення як непрочитані"
+msgstr "Oznacz wybrane powiadomienia jako nieprzeczytane"
 
 #: notifications/apps.py:10 notifications/base/models.py:243
 msgid "Notifications"
-msgstr "Сповіщення"
+msgstr "Powiadomienia"
 
 #: notifications/base/models.py:168
 msgid "level"
-msgstr "рівень"
+msgstr "poziom"
 
 #: notifications/base/models.py:175
 msgid "recipient"
-msgstr "отримувач"
+msgstr "odbiorca"
 
 #: notifications/base/models.py:178
 msgid "unread"
-msgstr "непрочитане"
+msgstr "nieprzeczytane"
 
 #: notifications/base/models.py:184
 msgid "actor content type"
-msgstr "тип вмісту ініціатора"
+msgstr "typ zawartości aktora"
 
 #: notifications/base/models.py:186
 msgid "actor object id"
-msgstr "ідентифікатор об’єкта ініціатора"
+msgstr "identyfikator obiektu aktora"
 
 #: notifications/base/models.py:188
 msgid "actor"
-msgstr "ініціатор"
+msgstr "aktor"
 
 #: notifications/base/models.py:190
 msgid "verb"
-msgstr "дія"
+msgstr "czasownik"
 
 #: notifications/base/models.py:191
 msgid "description"
-msgstr "опис"
+msgstr "opis"
 
 #: notifications/base/models.py:197
 msgid "target content type"
-msgstr "тип вмісту об’єкта призначення"
+msgstr "docelowy typ treści"
 
 #: notifications/base/models.py:202
 msgid "target object id"
-msgstr "ідентифікатор об’єкта призначення"
+msgstr "identyfikator obiektu docelowego"
 
 #: notifications/base/models.py:205
 msgid "target"
-msgstr "об’єкт призначення"
+msgstr "cel"
 
 #: notifications/base/models.py:211
 msgid "action object content type"
-msgstr "тип вмісту об’єкта дії"
+msgstr "typ zawartości obiektu akcji"
 
 #: notifications/base/models.py:216
 msgid "action object object id"
-msgstr "ідентифікатор об’єкта дії"
+msgstr "obiekt akcji identyfikator obiektu"
 
 #: notifications/base/models.py:221
 msgid "action object"
-msgstr "об’єкт дії"
+msgstr "obiekt akcji"
 
 #: notifications/base/models.py:224
 msgid "timestamp"
-msgstr "мітка часу"
+msgstr "znacznik czasu"
 
 #: notifications/base/models.py:227
 msgid "public"
-msgstr "загальнодоступне"
+msgstr "publiczne"
 
 #: notifications/base/models.py:228
 msgid "deleted"
-msgstr "видалено"
+msgstr "usunięte"
 
 #: notifications/base/models.py:229
 msgid "emailed"
-msgstr "надіслано електронною поштою"
+msgstr "wysłane e-mailem"
 
 #: notifications/base/models.py:231
 msgid "data"
-msgstr "дані"
+msgstr "dane"
 
 #: notifications/base/models.py:242
 msgid "Notification"
-msgstr "Сповіщення"
+msgstr "Powiadomienie"
 
 #: notifications/base/models.py:257
 #, python-format
 msgid "%(actor)s %(verb)s %(action_object)s on %(target)s %(timesince)s ago"
-msgstr "%(actor)s: %(verb)s — %(action_object)s для %(target)s %(timesince)s тому"
+msgstr "%(actor)s %(verb)s %(action_object)s w %(target)s %(timesince)s temu"
 
 #: notifications/base/models.py:261
 #, python-format
 msgid "%(actor)s %(verb)s %(target)s %(timesince)s ago"
-msgstr "%(actor)s: %(verb)s — %(target)s %(timesince)s тому"
+msgstr "%(actor)s %(verb)s %(target)s %(timesince)s temu"
 
 #: notifications/base/models.py:263
 #, python-format
 msgid "%(actor)s %(verb)s %(action_object)s %(timesince)s ago"
-msgstr "%(actor)s: %(verb)s — %(action_object)s %(timesince)s тому"
+msgstr "%(actor)s %(verb)s %(action_object)s %(timesince)s temu"
 
 #: notifications/base/models.py:264
 #, python-format
 msgid "%(actor)s %(verb)s %(timesince)s ago"
-msgstr "%(actor)s: %(verb)s %(timesince)s тому"
+msgstr "%(actor)s %(verb)s %(timesince)s temu"
 
 #: notifications/tests/templates/test_live.html:9
 msgid "Make a notification"
-msgstr "Створити сповіщення"
+msgstr "Złóż powiadomienie"
+

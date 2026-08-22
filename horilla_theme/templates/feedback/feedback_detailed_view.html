@@ -178,7 +178,7 @@
         <span class="font-medium text-sm text-[#565E6C] w-48">{% trans "End Date" %}</span>
         <p class="text-sm font-semibold flex items-center gap-5">:
           <span>  {{ feedback.end_date }}</span>
-          <span title="Due {% if feedback.end_date == today %} today {% else %}in {{ feedback.end_date|sub:today }}{% endif %}">
+          <span title="{% trans 'Due' %} {% if feedback.end_date == today %}{% trans 'today' %}{% else %}{% trans 'in' %} {{ feedback.end_date|sub:today }}{% endif %}">
             <ion-icon
               class="text-{% if feedback.end_date < today %}danger{% elif feedback.end_date == today %}warning{% else %}success{% endif %}"
               name="time-sharp"></ion-icon>

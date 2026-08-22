@@ -20,6 +20,11 @@ while ! nc -z "$DB_HOST" "$DB_PORT"; do
 done
 echo "PostgreSQL is ready!"
 
+# Compile gettext catalogs on every start. This is required in the development
+# image because the source tree is mounted into /app and .mo files are ignored.
+echo "Compiling translation catalogs..."
+python manage.py compilemessages
+
 # Every shipped default (.env.dist, docker-compose.yml's own dev default, and
 # historical leaked keys) is a known, public string -- never a real secret.
 # If SECRET_KEY is unset or matches one of those, generate a random one and

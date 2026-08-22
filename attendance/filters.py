@@ -742,7 +742,7 @@ og_init = EmployeeFilter.__init__
 def online_init(self, *args, **kwargs):
     og_init(self, *args, **kwargs)
     custom_field = django_filters.BooleanFilter(
-        label="Working", method=get_working_today
+        label=_("Working"), method=get_working_today
     )
     self.filters["working_today"] = custom_field
     self.form.fields["working_today"] = custom_field.field

@@ -3151,7 +3151,7 @@ class SetupChecklistDismissal(models.Model):
     class Meta:
         app_label = "base"
         unique_together = [("user", "company")]
-        verbose_name = "Setup Checklist Dismissal"
+        verbose_name = _("Setup Checklist Dismissal")
         verbose_name_plural = "Setup Checklist Dismissals"
 
     def __str__(self):

@@ -1035,10 +1035,10 @@ class EmployeeBankDetails(HorillaModel):
     state = models.CharField(max_length=50, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
     any_other_code1 = models.CharField(
-        max_length=50, verbose_name="Bank Code #1", null=True
+        max_length=50, verbose_name=_("Bank Code #1"), null=True
     )
     any_other_code2 = models.CharField(
-        max_length=50, null=True, blank=True, verbose_name="Bank Code #2"
+        max_length=50, null=True, blank=True, verbose_name=_("Bank Code #2")
     )
     additional_info = models.JSONField(null=True, blank=True)
     objects = HorillaCompanyManager(

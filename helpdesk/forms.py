@@ -170,7 +170,7 @@ class TicketForm(ModelForm):
             self.fields.pop("attachment", None)
         else:
             self.fields["attachment"] = MultipleFileField(
-                label="Attachements", required=False
+                label=_("Attachements"), required=False
             )
         request = getattr(horilla_middlewares._thread_locals, "request", None)
         instance = kwargs.get("instance")

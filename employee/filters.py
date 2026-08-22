@@ -41,7 +41,7 @@ class EmployeeFilter(HorillaFilterSet):
     search = django_filters.CharFilter(method="filter_by_name")
     search_field = django_filters.CharFilter(method="search_in")
     selected_search_field = django_filters.ChoiceFilter(
-        label="Search Field",
+        label=_("Search Field"),
         choices=[
             ("employee", _("Search in : Employee")),
             ("reporting_manager", _("Search in : Reporting manager")),
@@ -73,7 +73,7 @@ class EmployeeFilter(HorillaFilterSet):
 
     is_active = django_filters.ChoiceFilter(
         field_name="is_active",
-        label="Is Active",
+        label=_("Is Active"),
         choices=[
             (True, "Yes"),
             (False, "No"),
@@ -83,7 +83,7 @@ class EmployeeFilter(HorillaFilterSet):
 
     is_from_onboarding = django_filters.ChoiceFilter(
         field_name="is_from_onboarding",
-        label="Is From Onboarding",
+        label=_("Is From Onboarding"),
         choices=[
             (True, "Yes"),
             (False, "No"),
@@ -91,7 +91,7 @@ class EmployeeFilter(HorillaFilterSet):
     )
     is_directly_converted = django_filters.ChoiceFilter(
         field_name="is_directly_converted",
-        label="Is Directly Converted",
+        label=_("Is Directly Converted"),
         choices=[
             (True, "Yes"),
             (False, "No"),

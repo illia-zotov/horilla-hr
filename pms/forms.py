@@ -128,7 +128,7 @@ class ObjectiveForm(BaseForm):
                 required=False,
                 instance=self.instance,
             ),
-            label="Assignees",
+            label=_("Assignees"),
         )
 
         self.fields["managers"] = HorillaMultiSelectField(
@@ -141,7 +141,7 @@ class ObjectiveForm(BaseForm):
                 required=False,
                 instance=self.instance,
             ),
-            label="Managers",
+            label=_("Managers"),
         )
 
         reload_queryset(self.fields)

@@ -2188,14 +2188,14 @@ if apps.is_installed("attendance"):
 
     class CompensatoryLeaveRequest(HorillaModel):
         leave_type_id = models.ForeignKey(
-            LeaveType, on_delete=models.PROTECT, verbose_name="Leave type"
+            LeaveType, on_delete=models.PROTECT, verbose_name=_("Leave type")
         )
         employee_id = models.ForeignKey(
-            Employee, on_delete=models.CASCADE, verbose_name="Employee"
+            Employee, on_delete=models.CASCADE, verbose_name=_("Employee")
         )
         attendance_id = models.ManyToManyField(
             "attendance.Attendance",
-            verbose_name="Attendance",
+            verbose_name=_("Attendance"),
         )
         requested_days = models.FloatField(blank=True, null=True)
         requested_date = models.DateField(default=timezone.now)

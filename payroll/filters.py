@@ -271,7 +271,7 @@ class PayslipFilter(HorillaFilterSet):
     year = django_filters.CharFilter(field_name="start_date", lookup_expr="year")
 
     allowance_title = django_filters.CharFilter(
-        method="filter_by_allowance_title", label="Allowance Title"
+        method="filter_by_allowance_title", label=_("Allowance Title")
     )
     allowance_amount_gte = django_filters.NumberFilter(
         method="filter_by_allowance_amount_gte"

@@ -84,10 +84,10 @@ class KeyResult(HorillaModel):
         ("Currency", (("$", "USD$"), ("₹", "INR"), ("€", "EUR"))),
     )
     title = models.CharField(
-        max_length=60, null=True, blank=False, verbose_name="Title"
+        max_length=60, null=True, blank=False, verbose_name=_("Title")
     )
     description = models.TextField(
-        blank=False, null=False, max_length=255, verbose_name="Description"
+        blank=False, null=False, max_length=255, verbose_name=_("Description")
     )
     progress_type = models.CharField(
         max_length=60,
@@ -191,25 +191,25 @@ class Objective(HorillaModel):
         ("years", _("Years")),
     )
     title = models.CharField(
-        null=False, blank=False, max_length=100, verbose_name="Title"
+        null=False, blank=False, max_length=100, verbose_name=_("Title")
     )
     description = models.TextField(
-        blank=False, null=False, max_length=255, verbose_name="Description"
+        blank=False, null=False, max_length=255, verbose_name=_("Description")
     )
     managers = models.ManyToManyField(
-        Employee, related_name="objective", blank=True, verbose_name="Managers"
+        Employee, related_name="objective", blank=True, verbose_name=_("Managers")
     )
     assignees = models.ManyToManyField(
         Employee,
         related_name="assignees_objective",
         blank=True,
-        verbose_name="Assignees",
+        verbose_name=_("Assignees"),
     )
     key_result_id = models.ManyToManyField(
         KeyResult,
         blank=True,
         related_name="objective",
-        verbose_name="Default Key results",
+        verbose_name=_("Default Key results"),
     )
     duration_unit = models.CharField(
         max_length=20,
@@ -364,13 +364,13 @@ class EmployeeObjective(HorillaModel):
         null=True,
         blank=True,
         max_length=100,
-        verbose_name="Title",
+        verbose_name=_("Title"),
     )
     objective_description = models.TextField(
         blank=True,
         null=True,
         max_length=255,
-        verbose_name="Description",
+        verbose_name=_("Description"),
     )
     created_at = models.DateField(auto_now_add=True)
     objective_id = models.ForeignKey(
@@ -378,7 +378,7 @@ class EmployeeObjective(HorillaModel):
         null=True,
         blank=True,
         related_name="employee_objective",
-        verbose_name="Objective",
+        verbose_name=_("Objective"),
         on_delete=models.PROTECT,
     )
     employee_id = models.ForeignKey(
@@ -387,13 +387,13 @@ class EmployeeObjective(HorillaModel):
         blank=True,
         related_name="employee_objective",
         on_delete=models.PROTECT,
-        verbose_name="Employee",
+        verbose_name=_("Employee"),
     )
     key_result_id = models.ManyToManyField(
         KeyResult,
         blank=True,
         related_name="employee_objective",
-        verbose_name="Key results",
+        verbose_name=_("Key results"),
     )
     updated_at = models.DateField(auto_now=True)
     start_date = models.DateField(null=False, blank=False)
@@ -617,7 +617,7 @@ class EmployeeKeyResult(models.Model):
         null=True,
         blank=True,
         related_name="employee_key_result",
-        verbose_name="Key result",
+        verbose_name=_("Key result"),
         on_delete=models.PROTECT,
     )
     progress_type = models.CharField(
@@ -1612,7 +1612,7 @@ class MeetingsAnswer(models.Model):
         related_name="employee_meeting_answer",
         null=True,
         blank=True,
-        verbose_name="Employee",
+        verbose_name=_("Employee"),
     )
     meeting_id = models.ForeignKey(
         Meetings, on_delete=models.PROTECT, related_name="meeting_answer"
@@ -1630,7 +1630,7 @@ class EmployeeBonusPoint(HorillaModel):
         related_name="employe_bonus_point",
         null=True,
         blank=True,
-        verbose_name="Employee",
+        verbose_name=_("Employee"),
     )
     bonus_point = models.IntegerField(default=0, verbose_name=_("Bonus Points"))
     instance = models.CharField(max_length=150, null=True, blank=True)

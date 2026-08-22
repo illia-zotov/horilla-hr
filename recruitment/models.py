@@ -1447,11 +1447,11 @@ class RejectedCandidate(HorillaModel):
     candidate_id = models.OneToOneField(
         Candidate,
         on_delete=models.PROTECT,
-        verbose_name="Candidate",
+        verbose_name=_("Candidate"),
         related_name="rejected_candidate",
     )
     reject_reason_id = models.ManyToManyField(
-        RejectReason, verbose_name="Reject reason", blank=True
+        RejectReason, verbose_name=_("Reject reason"), blank=True
     )
     description = models.TextField(max_length=255)
     objects = HorillaCompanyManager(
@@ -1521,7 +1521,7 @@ class RecruitmentSurvey(HorillaModel):
         ("rating", _("Rating")),
     ]
     template_id = models.ManyToManyField(
-        SurveyTemplate, verbose_name="Template", blank=True
+        SurveyTemplate, verbose_name=_("Template"), blank=True
     )
     is_mandatory = models.BooleanField(default=False)
     recruitment_ids = models.ManyToManyField(
@@ -1662,7 +1662,7 @@ class SkillZone(HorillaModel):
     Model for talent pool
     """
 
-    title = models.CharField(max_length=50, verbose_name="Talent Pool")
+    title = models.CharField(max_length=50, verbose_name=_("Talent Pool"))
     description = models.TextField(verbose_name=_("Description"), max_length=255)
     company_id = models.ForeignKey(
         Company,

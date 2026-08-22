@@ -340,7 +340,7 @@ class LeaveAllocationRequestFormView(HorillaFormView):
         employee = self.request.user.employee_get
         self.form_class(initial={"employee_id": employee})
         if self.form.instance.pk:
-            self.form_class.verbose_name = "Update Request"
+            self.form_class.verbose_name = _("Update Request")
             self.form_class(instance=self.form.instance)
         self.form = choosesubordinates(
             self.request, self.form, "leave.add_leaveallocationrequest"

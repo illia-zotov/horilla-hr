@@ -9,6 +9,7 @@ import django_filters
 from django import forms
 from django.db.models import Q
 from django.utils.translation import gettext as __
+from django.utils.translation import gettext_lazy as _
 from django_filters import CharFilter, DateFilter, FilterSet, filters
 
 from base.models import (
@@ -59,7 +60,7 @@ class ShiftRequestFilter(HorillaFilterSet):
     search = CharFilter(method=filter_by_name)
 
     requested = django_filters.BooleanFilter(
-        method="filter_requested", label="Requested?"
+        method="filter_requested", label=_("Requested?")
     )
 
     class Meta:
@@ -125,7 +126,7 @@ class WorkTypeRequestFilter(HorillaFilterSet):
         widget=forms.DateInput(attrs={"type": "date"}),
     )
     requested = django_filters.BooleanFilter(
-        method="filter_by_requested", label="Requested"
+        method="filter_by_requested", label=_("Requested")
     )
     search = CharFilter(method=filter_by_name)
 
@@ -650,19 +651,19 @@ class RosterFilter(django_filters.FilterSet):
 
     department = django_filters.ModelChoiceFilter(
         queryset=None,
-        label="Department",
+        label=_("Department"),
         widget=forms.Select(attrs={"class": "oh-select oh-select-2 w-100"}),
     )
     from_date = django_filters.DateFilter(
         field_name="date",
         lookup_expr="gte",
-        label="From Date",
+        label=_("From Date"),
         widget=forms.DateInput(attrs={"type": "date", "class": "oh-input w-100"}),
     )
     to_date = django_filters.DateFilter(
         field_name="date",
         lookup_expr="lte",
-        label="To Date",
+        label=_("To Date"),
         widget=forms.DateInput(attrs={"type": "date", "class": "oh-input w-100"}),
     )
     search = django_filters.CharFilter(method=filter_by_name)

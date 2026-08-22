@@ -265,7 +265,7 @@ class RecruitmentForm(HorillaFormView):
         context = super().get_context_data(**kwargs)
 
         if self.form.instance.pk:
-            self.form_class.verbose_name = "Edit Recruitment"
+            self.form_class.verbose_name = _("Edit Recruitment")
         return context
 
     def form_valid(self, form: RecruitmentCreationFormExtended) -> HttpResponse:

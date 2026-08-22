@@ -45,7 +45,7 @@
                 <div class="oh-sticky-table__td text-center">
                     <div
                         class="oh-checkpoint-badge oh-checkpoint-badge--secondary"
-                        title="Completed {{ employee.employeetask_set|completed_tasks }} of {{employee.employeetask_set.all|length}} tasks"
+                        title="{% blocktrans with completed=employee.employeetask_set|completed_tasks total=employee.employeetask_set.all|length %}Completed {{ completed }} of {{ total }} tasks{% endblocktrans %}"
                     >
                         {{ employee.employeetask_set|completed_tasks }} /
                         {{ employee.employeetask_set.all|length }}

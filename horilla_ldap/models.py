@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 # Create your models here.
@@ -10,7 +11,7 @@ class LDAPSettings(models.Model):
     base_dn = models.CharField(max_length=255, default="ou=users,dc=horilla,dc=com")
 
     class Meta:
-        verbose_name = "LDAP Settings"
+        verbose_name = _("LDAP Settings")
 
     def __str__(self):
         return f"LDAP Settings ({self.ldap_server})"

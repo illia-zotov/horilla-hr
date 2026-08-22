@@ -1,5 +1,5 @@
 # Build stage - for compiling dependencies
-FROM python:3.12-slim AS builder
+FROM python:3.12-slim-bookworm AS builder
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
@@ -32,7 +32,7 @@ RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt gunicorn psycopg2-binary
 
 # Production stage - minimal runtime image
-FROM python:3.12-slim AS production
+FROM python:3.12-slim-bookworm AS production
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -52,6 +52,8 @@ RUN apt-get update \
         libffi8 \
         curl \
         netcat-openbsd \
+        gettext \
+        wkhtmltopdf \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 

@@ -567,13 +567,13 @@ class SurveyFilter(HorillaFilterSet):
 
     options = django_filters.CharFilter(
         lookup_expr="icontains",
-        label="Options",
+        label=_("Options"),
         field_name="options",
     )
 
     question = django_filters.CharFilter(
         lookup_expr="icontains",
-        label="Question",
+        label=_("Question"),
         field_name="question",
     )
 
@@ -596,7 +596,7 @@ class SurveyTemplateFilter(django_filters.FilterSet):
 
     question = django_filters.CharFilter(
         lookup_expr="icontains",
-        label="Title",
+        label=_("Title"),
         field_name="title",
     )
 

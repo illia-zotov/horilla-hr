@@ -626,7 +626,7 @@ class AddCandidateForm(ModelForm):
     Form for Candidate model
     """
 
-    verbose_name = "Add Candidate"
+    verbose_name = _("Add Candidate")
 
     class Meta:
         """
@@ -742,7 +742,7 @@ class StageNoteForm(ModelForm):
         super().__init__(*args, **kwargs)
         # field = self.fields["candidate_id"]
         # field.widget = field.hidden_widget()
-        self.fields["stage_files"] = MultipleFileField(label="files")
+        self.fields["stage_files"] = MultipleFileField(label=_("files"))
         self.fields["stage_files"].required = False
 
     def save(self, commit: bool = ...) -> Any:
@@ -788,7 +788,7 @@ class QuestionForm(ModelForm):
 
     cols = {"options": 12, "template_id": 12, "question": 12}
 
-    verbose_name = "Survey Questions"
+    verbose_name = _("Survey Questions")
 
     recruitment = forms.ModelMultipleChoiceField(
         queryset=Recruitment.objects.filter(is_active=True),
@@ -955,7 +955,7 @@ class TemplateForm(BaseModelForm):
 
     cols = {"title": 12, "description": 12, "company_id": 12}
 
-    verbose_name = "Template"
+    verbose_name = _("Template")
 
     class Meta:
         model = SurveyTemplate
@@ -976,12 +976,12 @@ class AddQuestionForm(Form):
     AddQuestionForm
     """
 
-    verbose_name = "Add Question"
+    verbose_name = _("Add Question")
     question_ids = forms.ModelMultipleChoiceField(
-        queryset=RecruitmentSurvey.objects.all(), label="Questions"
+        queryset=RecruitmentSurvey.objects.all(), label=_("Questions")
     )
     template_ids = forms.ModelMultipleChoiceField(
-        queryset=SurveyTemplate.objects.all(), label="Templates"
+        queryset=SurveyTemplate.objects.all(), label=_("Templates")
     )
 
     def save(self):
@@ -1059,7 +1059,7 @@ class SkillZoneCreateForm(BaseModelForm):
 class SkillZoneCandidateForm(ModelForm):
 
     cols = {"skill_zone_id": 12, "candidate_id": 12, "reason": 12}
-    verbose_name = "Talent Pool Candidate"
+    verbose_name = _("Talent Pool Candidate")
     candidate_id = forms.ModelMultipleChoiceField(
         queryset=Candidate.objects.all(),
         widget=forms.SelectMultiple,
@@ -1140,7 +1140,7 @@ class SkillZoneCandidateForm(ModelForm):
 
 class ToSkillZoneForm(ModelForm):
 
-    verbose_name = "Add to Talent Pool"
+    verbose_name = _("Add to Talent Pool")
     skill_zone_ids = forms.ModelMultipleChoiceField(
         queryset=SkillZone.objects.all(), label=_("Talent Pools")
     )
@@ -1223,7 +1223,7 @@ class RejectedCandidateForm(ModelForm):
     RejectedCandidateForm
     """
 
-    verbose_name = "Rejected Candidate"
+    verbose_name = _("Rejected Candidate")
 
     cols = {"reject_reason_id": 12, "description": 12}
 
@@ -1259,7 +1259,7 @@ class ScheduleInterviewForm(BaseModelForm):
         "employee_id": 12,
     }
 
-    verbose_name = "Schedule Interview"
+    verbose_name = _("Schedule Interview")
 
     class Meta:
         model = InterviewSchedule
@@ -1410,7 +1410,7 @@ class CandidateDocumentRequestForm(ModelForm):
 class CandidateDocumentUpdateForm(ModelForm):
     """form to Update a Document"""
 
-    verbose_name = "CandidateDocument"
+    verbose_name = _("CandidateDocument")
 
     class Meta:
         model = CandidateDocument
@@ -1433,7 +1433,7 @@ class CandidateDocumentRejectForm(ModelForm):
 class CandidateDocumentForm(ModelForm):
     """form to create a new Document"""
 
-    verbose_name = "Document"
+    verbose_name = _("Document")
 
     class Meta:
         model = CandidateDocument

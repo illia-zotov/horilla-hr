@@ -34,7 +34,7 @@ class OffboardingForm(ModelForm):
     OffboardingForm model form class
     """
 
-    verbose_name = "Offboarding"
+    verbose_name = _("Offboarding")
 
     cols = {"title": 12, "description": 12, "managers": 12, "status": 12}
 
@@ -57,7 +57,7 @@ class OffboardingStageForm(ModelForm):
     OffboardingStage model form
     """
 
-    verbose_name = "Stage"
+    verbose_name = _("Stage")
 
     cols = {"title": 12, "type": 12, "managers": 12}
 
@@ -80,7 +80,7 @@ class OffboardingEmployeeForm(ModelForm):
     OffboardingEmployeeForm model form
     """
 
-    verbose_name = "Offboarding "
+    verbose_name = _("Offboarding ")
 
     class Meta:
         model = OffboardingEmployee
@@ -147,7 +147,7 @@ class NoteForm(ModelForm):
     Offboarding note model form
     """
 
-    verbose_name = "Add Note"
+    verbose_name = _("Add Note")
 
     class Meta:
         model = OffboardingNote
@@ -156,7 +156,7 @@ class NoteForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["attachment"] = MultipleFileField(label="Attachements")
+        self.fields["attachment"] = MultipleFileField(label=_("Attachements"))
         self.fields["attachment"].required = False
 
     def as_p(self):
@@ -190,7 +190,7 @@ class TaskForm(ModelForm):
     TaskForm model form
     """
 
-    verbose_name = "Offboarding Task"
+    verbose_name = _("Offboarding Task")
     tasks_to = forms.ModelMultipleChoiceField(
         queryset=OffboardingEmployee.objects.all(), required=False, label=_("Task To")
     )
@@ -249,9 +249,9 @@ class ResignationLetterForm(ModelForm):
 
     description = forms.CharField(
         widget=forms.Textarea(attrs={"data-summernote": "", "style": "display:none;"}),
-        label="Description",
+        label=_("Description"),
     )
-    verbose_name = "Resignation Letter"
+    verbose_name = _("Resignation Letter")
 
     class Meta:
         model = ResignationLetter

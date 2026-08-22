@@ -86,7 +86,7 @@ class AllowanceForm(ModelForm):
                 filter_template_path="employee_filters.html",
                 instance=self.instance,
             ),
-            label="Specific Employees",
+            label=_("Specific Employees"),
         )
         self.fields["if_condition"].widget.attrs.update(
             {
@@ -225,7 +225,7 @@ class DeductionForm(ModelForm):
                 filter_template_path="employee_filters.html",
                 instance=self.instance,
             ),
-            label="Specific Employees",
+            label=_("Specific Employees"),
         )
         self.fields["if_condition"].widget.attrs.update(
             {
@@ -419,7 +419,7 @@ class GeneratePayslipForm(HorillaForm):
     """
 
     group_name = forms.CharField(
-        label="Batch name",
+        label=_("Batch name"),
         required=True,
         # help_text="Enter +-something if you want to generate payslips by batches",
     )
@@ -431,7 +431,7 @@ class GeneratePayslipForm(HorillaForm):
             filter_instance_context_name="f",
             filter_template_path="employee_filters.html",
         ),
-        label="Employee",
+        label=_("Employee"),
         required=True,
     )
     start_date = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}))
@@ -589,12 +589,12 @@ class BonusForm(Form):
 
     title = forms.CharField(max_length=100)
     date = forms.DateField(widget=forms.DateInput(), required=False)
-    employee_id = forms.IntegerField(label="Employee", widget=forms.HiddenInput())
+    employee_id = forms.IntegerField(label=_("Employee"), widget=forms.HiddenInput())
     is_fixed = forms.BooleanField(
-        label="Is Fixed", initial=True, required=False, widget=forms.CheckboxInput()
+        label=_("Is Fixed"), initial=True, required=False, widget=forms.CheckboxInput()
     )
     amount = forms.DecimalField(
-        label="Amount",
+        label=_("Amount"),
         required=False,
     )
     based_on = forms.ChoiceField(choices=[("BASIC_PAY", "Basic Pay")], required=False)
@@ -602,7 +602,7 @@ class BonusForm(Form):
         validators=[
             rate_validator,
         ],
-        label="Rate",
+        label=_("Rate"),
         required=False,
     )
 
@@ -807,7 +807,7 @@ class ReimbursementForm(ModelForm):
 
     cols = {"description": 12}
 
-    verbose_name = "Reimbursement / Encashment"
+    verbose_name = _("Reimbursement / Encashment")
 
     class Meta:
         model = Reimbursement
@@ -871,7 +871,7 @@ class ReimbursementForm(ModelForm):
             attrs={"type": "date", "class": "oh-input w-100"}
         )
 
-        self.fields["attachment"] = MultipleFileField(label="Attachments")
+        self.fields["attachment"] = MultipleFileField(label=_("Attachments"))
         self.fields["attachment"].widget.attrs["accept"] = ".jpg, .jpeg, .png, .pdf"
 
         self.exclude_fields_by_type(exclude_fields)

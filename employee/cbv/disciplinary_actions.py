@@ -160,7 +160,7 @@ class DisciplinaryActionsFormView(HorillaFormView):
         # form = super().get_form(self.form_class)
         if self.form.instance.pk:
             self.form_class(instance=self.form.instance)
-            self.form_class.verbose_name = "Edit Action"
+            self.form_class.verbose_name = _("Edit Action")
         context["form"] = self.form
         return context
 

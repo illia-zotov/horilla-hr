@@ -239,7 +239,7 @@ class FeedbackFilter(HorillaFilterSet):
     """
 
     due_date_quick_filter = django_filters.ChoiceFilter(
-        label="Quick Date",
+        label=_("Quick Date"),
         choices=DUE_DATE_CHOICES,
         method="filter_due_date",
         widget=forms.HiddenInput(),  # We'll trigger this via pills
@@ -383,7 +383,7 @@ class KeyResultFilter(CustomFilterSet):
 
     due = django_filters.ChoiceFilter(
         method="filter_due_date",
-        label="Due",
+        label=_("Due"),
         choices=[
             ("due_today", _("Due Today")),
             ("due_this_week", _("Due This Week")),
@@ -533,7 +533,7 @@ class EmployeeObjectiveFilter(HorillaFilterSet):
 
     due = django_filters.ChoiceFilter(
         method="filter_due_date",
-        label="Due",
+        label=_("Due"),
         choices=[
             ("due_today", _("Due Today")),
             ("due_this_week", _("Due This Week")),

@@ -81,12 +81,12 @@ class GdriveBackupSetupForm(ModelForm):
     verbose_name = _("Google Drive Backup")
     backup_db = forms.BooleanField(
         required=False,
-        label="Backup DB",
+        label=_("Backup DB"),
         help_text=_("Enable to backup database to Google Drive"),
     )
     backup_media = forms.BooleanField(
         required=False,
-        label="Backup Media",
+        label=_("Backup Media"),
         help_text=_("Enable to backup all media files to Google Drive"),
     )
     interval = forms.BooleanField(

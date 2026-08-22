@@ -318,6 +318,7 @@ LANGUAGES = (
     ("it", "Italian"),
     ("tr", "Turkish"),
     ("uk", "Українська"),
+    ("pl", "Polski"),
 )
 
 LOCALE_PATHS = [join(BASE_DIR, "horilla", "locale")]

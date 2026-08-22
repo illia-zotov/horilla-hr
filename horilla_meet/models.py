@@ -35,7 +35,7 @@ class GoogleCloudCredential(models.Model):
         on_delete=models.PROTECT,
         null=True,
         blank=True,
-        verbose_name="Company",
+        verbose_name=_("Company"),
     )
     objects = HorillaCompanyManager("company_id")
 
@@ -125,7 +125,7 @@ class GoogleCloudCredential(models.Model):
         on the combination of `project_id` and `company_id`.
         """
 
-        verbose_name = "Google Cloud Credential"
+        verbose_name = _("Google Cloud Credential")
         verbose_name_plural = "Google Cloud Credentials"
         unique_together = ["project_id", "company_id"]
 

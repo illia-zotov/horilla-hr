@@ -3,6 +3,7 @@ scheduler.py
 
 This module is used to register scheduled tasks
 """
+from django.utils.translation import gettext_lazy as _
 
 import sys
 from datetime import date, timedelta
@@ -48,7 +49,7 @@ def notify_expiring_assets():
                     verb_es=f"El activo {asset.asset_name} caduca en {asset.notify_before} días.",
                     verb_fr=f"L'actif {asset.asset_name} expire dans {asset.notify_before} jours.",
                     redirect=reverse("asset-category-view"),
-                    label="System",
+                    label=_("System"),
                     icon="information",
                 )
 
@@ -99,7 +100,7 @@ def notify_expiring_documents():
                     verb_fr=f"Le document '{document.title}' expire dans {document.notify_before}\
                         jours",
                     redirect=reverse("asset-category-view"),
-                    label="System",
+                    label=_("System"),
                     icon="information",
                 )
             if today >= expiry_date:

@@ -875,7 +875,7 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
                 data-url="{% url 'attendance-monthly-summary-detail' %}?employee_id={{ row.employee.pk }}&from_date={{ from_date }}&to_date={{ to_date }}&metric=conflict">
               {% if row.resolved_conflicts == row.conflict_days %}
                 {# All resolved: green number + âœ" #}
-                <span style="color:#30a180;" title="All {{ row.conflict_days }} conflict{{ row.conflict_days|pluralize }} resolved">
+                <span style="color:#30a180;" title="{% blocktrans with count=row.conflict_days %}All {{ count }} conflicts resolved{% endblocktrans %}">
                   {{ row.conflict_days }} <span style="font-size:.7rem;">&#10003;</span>
                 </span>
               {% elif row.resolved_conflicts %}
@@ -975,12 +975,12 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
     if (loadedUrl === url) return;
     loadedUrl = url;
 
-    pop.innerHTML = '<div style="padding:14px 16px;color:#6c757d;font-size:.8rem;display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border:2px solid #dee2e6;border-top-color:#0d6efd;border-radius:50%;display:inline-block;animation:ms-spin .6s linear infinite;"></span> Loading...</div>';
+    pop.innerHTML = '<div style="padding:14px 16px;color:#6c757d;font-size:.8rem;display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border:2px solid #dee2e6;border-top-color:#0d6efd;border-radius:50%;display:inline-block;animation:ms-spin .6s linear infinite;"></span> {% trans "Loading..." %}</div>';
 
     fetch(url, { headers: { 'HX-Request': 'true', 'X-Requested-With': 'XMLHttpRequest' } })
       .then(r => r.text())
       .then(html => { pop.innerHTML = html; })
-      .catch(() => { pop.innerHTML = '<p class="ms-pop-empty">Failed to load.</p>'; });
+      .catch(() => { pop.innerHTML = '<p class="ms-pop-empty">{% trans "Failed to load." %}</p>'; });
   }
 
   function scheduleHide() {
@@ -1228,7 +1228,7 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
 
     content.innerHTML = '<div style="padding:28px 24px;color:#6c757d;font-size:.85rem;display:flex;align-items:center;gap:10px;">'
       + '<span style="width:16px;height:16px;border:2px solid #dee2e6;border-top-color:#6366f1;border-radius:50%;display:inline-block;animation:ms-spin .6s linear infinite;flex-shrink:0;"></span>'
-      + ' Loading calendar...</div>';
+      + ' {% trans "Loading calendar..." %}</div>';
 
     overlay.style.display = 'flex';
 
@@ -1236,7 +1236,7 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
       .then(function (r) { return r.text(); })
       .then(function (html) { content.innerHTML = html; })
       .catch(function () {
-        content.innerHTML = '<p style="padding:24px;color:#dc3545;">Failed to load calendar.</p>';
+        content.innerHTML = '<p style="padding:24px;color:#dc3545;">{% trans "Failed to load calendar." %}</p>';
       });
   }
 
@@ -1266,7 +1266,7 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
   function _calSpinner(msg) {
     return '<div style="padding:14px 20px;font-size:.8rem;color:#92400e;display:flex;align-items:center;gap:8px;">'
       + '<span style="width:14px;height:14px;border:2px solid #fb923c;border-top-color:#92400e;border-radius:50%;display:inline-block;animation:ms-spin .6s linear infinite;flex-shrink:0;"></span>'
-      + ' ' + (msg || 'Loading...') + '</div>';
+      + ' ' + (msg || '{% trans "Loading..." %}') + '</div>';
   }
 
   window.msCalLoadResolve = function (date, conflictType, detail) {
@@ -1306,7 +1306,7 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
           panel.className = 'panel-resolved';
         }
       })
-      .catch(function () { panel.innerHTML = '<p style="padding:12px;color:#dc3545;">Failed to load.</p>'; });
+      .catch(function () { panel.innerHTML = '<p style="padding:12px;color:#dc3545;">{% trans "Failed to load." %}</p>'; });
   };
 
   window.msCalResolvePost = function (resolution, conflictType) {
@@ -1318,7 +1318,7 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
 
     content.innerHTML = '<div style="padding:28px 24px;color:#6c757d;font-size:.85rem;display:flex;align-items:center;gap:10px;">'
       + '<span style="width:16px;height:16px;border:2px solid #dee2e6;border-top-color:#6366f1;border-radius:50%;display:inline-block;animation:ms-spin .6s linear infinite;flex-shrink:0;"></span>'
-      + ' Saving and refreshing...</div>';
+      + ' {% trans "Saving and refreshing..." %}</div>';
 
     fetch(ctx.resolveUrl, {
       method: 'POST',
@@ -1339,7 +1339,7 @@ reloadSelectedCount($('.count_msAttendance'),'selectedInstances');">
     }).then(function (r) { return r.text(); })
       .then(function (html) { content.innerHTML = html; })
       .catch(function () {
-        content.innerHTML = '<p style="padding:24px;color:#dc3545;">Failed to save resolution.</p>';
+        content.innerHTML = '<p style="padding:24px;color:#dc3545;">{% trans "Failed to save resolution." %}</p>';
       });
   };
 })();
