@@ -204,7 +204,7 @@ msgid "Ok"
 msgstr "добре"
 
 msgid "Total vacancy is %(vacancy)s."
-msgstr "Загальна кількість вакансій %(vacancy)s."
+msgstr "Усього вакансій: %(vacancy)s."
 
 msgid ""
 "Are you sure to change the candidate from %(from)s stage to %(to)s stage"
@@ -401,7 +401,7 @@ msgid "Settings configurations"
 msgstr "Конфігурації налаштувань"
 
 msgid "Settings menu bar"
-msgstr "Панель меню налаштувань"
+msgstr "Меню налаштувань"
 
 msgid "Stage"
 msgstr "Етап"

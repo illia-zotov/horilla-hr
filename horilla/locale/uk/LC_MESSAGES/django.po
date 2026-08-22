@@ -14,10 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 msgid "Default Employee View"
-msgstr "Стандартний вигляд для працівника"
+msgstr "Типовий вигляд працівника"
 
 msgid "Default Employee Detailed View"
-msgstr "Стандартний детальний вигляд для працівника"
+msgstr "Типовий детальний вигляд працівника"
 
 msgid "You dont have access to the feature"
 msgstr "У вас немає доступу до цієї функції"
@@ -59,10 +59,10 @@ msgid "Groups"
 msgstr "Групи"
 
 msgid "Default Accessibility"
-msgstr "Доступність за замовчуванням"
+msgstr "Типова доступність"
 
 msgid "Limit default view access to horilla feature"
-msgstr "Обмежити доступ до функції Horilla за замовчуванням"
+msgstr "Обмежити доступ до функції за замовчуванням"
 
 msgid "Actions"
 msgstr "Дії"
@@ -274,7 +274,7 @@ msgid "Asset Allocation / Return Date"
 msgstr "Видача активу / дата повернення"
 
 msgid "Tracking Id"
-msgstr "Ідентифікатор відстеження"
+msgstr "ID відстеження"
 
 msgid "Batch No"
 msgstr "Номер партії"
@@ -403,7 +403,7 @@ msgid "Major damage"
 msgstr "Значне пошкодження"
 
 msgid "Healthy"
-msgstr "У справному стані"
+msgstr "Справний"
 
 msgid "Assigned To"
 msgstr "Призначено"
@@ -1204,7 +1204,7 @@ msgid "Is active"
 msgstr "Активно"
 
 msgid "Default Grace Time"
-msgstr "Пільговий час за замовчуванням"
+msgstr "Типовий пільговий час"
 
 msgid "Grace Time"
 msgstr "Пільговий час"
@@ -2791,7 +2791,7 @@ msgid "File type %(ext)s is not allowed for security reasons."
 msgstr "Тип файлу %(ext)s заборонено з міркувань безпеки."
 
 msgid "Is Hq"
-msgstr "Є головним офісом"
+msgstr "Головний офіс"
 
 msgid "Address"
 msgstr "Адреса"
@@ -2977,7 +2977,7 @@ msgid "Subject"
 msgstr "Тема"
 
 msgid "Host User"
-msgstr "Ім'я користувача хоста"
+msgstr "Користувач хоста"
 
 msgid "Host"
 msgstr "Хост"
@@ -3365,7 +3365,7 @@ msgid "Group name"
 msgstr "Назва групи"
 
 msgid "Give this group a clear name, e.g. HR Managers or Finance Team."
-msgstr "Дайте групі чітку назву, напр. HR-менеджери або Фінансова команда."
+msgstr "Дайте групі чітку назву, напр. HR-менеджери або фінансова команда."
 
 msgid "e.g. HR Managers"
 msgstr "напр. HR-менеджери"
@@ -3828,7 +3828,7 @@ msgid "Email Port"
 msgstr "Порт пошти"
 
 msgid "Default From Email"
-msgstr "Електронна пошта відправника за замовчуванням"
+msgstr "Пошта відправника за замовчуванням"
 
 msgid "Email Host Username"
 msgstr "Ім'я користувача хосту пошти"
@@ -3861,7 +3861,7 @@ msgid "Use dynamic display name"
 msgstr "Використовуйте динамічну відображувану назву"
 
 msgid "Email Send Timeout (seconds)"
-msgstr "Тайм-аут надсилання електронної пошти (секунди)"
+msgstr "Тайм-аут надсилання пошти (секунди)"
 
 msgid ""
 "\"Use TLS\" and \"Use SSL\" are mutually exclusive, so only set one of those"
@@ -3871,7 +3871,7 @@ msgstr ""
 "увімкніть лише один із цих параметрів."
 
 msgid "Email Configuration"
-msgstr "Налаштування електронної пошти"
+msgstr "Налаштування пошти"
 
 msgid "Leave Requested Days"
 msgstr "Запитані дні відпустки"
@@ -3893,7 +3893,7 @@ msgid ""
 "condition field is Leave Requested Days."
 msgstr ""
 "Будь ласка, введіть коректне числове значення для умови, коли полем умови є "
-"Запитані дні відпустки."
+"запитані дні відпустки."
 
 msgid "Please specify condition value range"
 msgstr "Будь ласка, вкажіть діапазон значень умови"
@@ -3903,14 +3903,14 @@ msgid ""
 " field is Leave Requested Days."
 msgstr ""
 "Будь ласка, введіть коректне числове початкове значення, коли полем умови є "
-"Запитані дні відпустки."
+"запитані дні відпустки."
 
 msgid ""
 "Please enter a valid numeric value for the ending value when the condition "
 "field is Leave Requested Days."
 msgstr ""
 "Будь ласка, введіть коректне числове кінцеве значення, коли полем умови є "
-"Запитані дні відпустки."
+"запитані дні відпустки."
 
 msgid "End value must be different from the start value in a range."
 msgstr "Кінцеве значення має відрізнятися від початкового в діапазоні."
@@ -4006,13 +4006,13 @@ msgid "System Preferences"
 msgstr "Системні налаштування"
 
 msgid "Default Expire Days"
-msgstr "Кількість днів дії за замовчуванням"
+msgstr "Типова кількість днів дії"
 
 msgid "Auto-expiry days for announcements"
 msgstr "Дні автоматичного закінчення терміну дії оголошень"
 
 msgid "Default Records Per Page"
-msgstr "Кількість записів на сторінці за замовчуванням"
+msgstr "Типова кількість записів на сторінці"
 
 msgid "Rows shown per page"
 msgstr "Кількість рядків на сторінці"
@@ -4895,10 +4895,10 @@ msgid "No payslips available"
 msgstr "Немає доступних розрахункових листків"
 
 msgid "Gross Pay"
-msgstr "Валова заробітна плата"
+msgstr "Валова зарплата"
 
 msgid "Net Pay"
-msgstr "Чиста заробітна плата"
+msgstr "Чиста зарплата"
 
 msgid "No active goals"
 msgstr "Немає активних цілей"
@@ -5880,7 +5880,7 @@ msgid "Contract end date"
 msgstr "Дата закінчення контракту"
 
 msgid "Wage type"
-msgstr "Тип заробітної плати"
+msgstr "Тип зарплати"
 
 msgid "Calculate daily leave amount"
 msgstr "Розрахувати денну суму відпустки"
@@ -7438,7 +7438,7 @@ msgstr ""
 
 msgid "When the Validity field is enabled, a Validity End Date is required."
 msgstr ""
-"Коли поле Термін дії ввімкнено, потрібно вказати дату закінчення терміну "
+"Коли поле термін дії ввімкнено, потрібно вказати дату закінчення терміну "
 "дії."
 
 msgid "Card Number"
@@ -7518,7 +7518,7 @@ msgid "API Secret"
 msgstr "Секрет API"
 
 msgid "Is Live"
-msgstr "Активний в реальному часі"
+msgstr "Онлайн"
 
 msgid "Is Scheduled"
 msgstr "Заплановано"
@@ -8051,7 +8051,7 @@ msgid "Date of Joining"
 msgstr "Дата прийняття на роботу"
 
 msgid "About"
-msgstr "Про працівника"
+msgstr "Про"
 
 msgid "Work Type & Shift"
 msgstr "Тип роботи та зміна"
@@ -8087,7 +8087,7 @@ msgid "Add Profile Edit Access"
 msgstr "Надати доступ до редагування профілю"
 
 msgid "Badge Id"
-msgstr "Ідентифікатор бейджа"
+msgstr "ID бейджа"
 
 msgid "Work Information"
 msgstr "Робоча інформація"
@@ -8178,7 +8178,7 @@ msgid "Date Joining"
 msgstr "Дата прийому"
 
 msgid "Basic Salary"
-msgstr "Базова заробітна плата"
+msgstr "Базова зарплата"
 
 msgid "Salary Hour"
 msgstr "Погодинна оплата"
@@ -8265,7 +8265,7 @@ msgid "Employee tag"
 msgstr "Тег працівника"
 
 msgid "Joining Date"
-msgstr "Дата прийому на роботу"
+msgstr "Дата прийому"
 
 msgid "Salary Per Hour"
 msgstr "Погодинна оплата"
@@ -8410,7 +8410,7 @@ msgid "Personal Info"
 msgstr "Особиста інформація"
 
 msgid "Bank Info"
-msgstr "Банківська інформація"
+msgstr "Банківські дані"
 
 msgid "Assign Leave Type"
 msgstr "Призначити тип відпустки"
@@ -8813,7 +8813,7 @@ msgid "Carryforward Leave Days"
 msgstr "Дні відпустки, що переносяться"
 
 msgid "Total Leave Days"
-msgstr "Загальна кількість днів відпустки"
+msgstr "Усього днів відпустки"
 
 msgid "Requested days"
 msgstr "Запитувані дні"
@@ -9029,7 +9029,7 @@ msgid "Contract"
 msgstr "Контракт"
 
 msgid "Wage Type"
-msgstr "Тип заробітної плати"
+msgstr "Тип зарплати"
 
 msgid "Filing Status"
 msgstr "Статус подання"
@@ -9676,7 +9676,7 @@ msgid "FAQs"
 msgstr "FAQ"
 
 msgid "Helpdesk"
-msgstr "Служба підтримки"
+msgstr "Підтримка"
 
 msgid "Assign managers responsible for helpdesk tickets per department."
 msgstr ""
@@ -11014,7 +11014,7 @@ msgstr ""
 "завершення не вказано."
 
 msgid "Tracking ID"
-msgstr "Ідентифікатор відстеження"
+msgstr "ID відстеження"
 
 msgid "Report"
 msgstr "Звіт"
@@ -11115,8 +11115,8 @@ msgid ""
 "Pick a module on the left, then turn Create / View / Edit / Delete on. Use "
 "View only or Full access for faster setup. Changes save automatically."
 msgstr ""
-"Виберіть модуль ліворуч, потім увімкніть Створення / Перегляд / Редагування "
-"/ Видалення. Для швидшого налаштування скористайтеся «Лише перегляд» або "
+"Виберіть модуль ліворуч, потім увімкніть створення / перегляд / редагування "
+"/ видалення. Для швидшого налаштування скористайтеся «Лише перегляд» або "
 "«Повний доступ». Зміни зберігаються автоматично."
 
 msgid "Click to rename"
@@ -11230,7 +11230,7 @@ msgid ""
 "Use Roles to grant company-specific permissions."
 msgstr ""
 "Дозволи, призначені працівнику тут напряму, діють у всіх компаніях. Для "
-"дозволів по компаніях використовуйте Ролі."
+"дозволів по компаніях використовуйте ролі."
 
 msgid "Search module or feature…"
 msgstr "Пошук модуля або функції…"
@@ -11660,13 +11660,13 @@ msgid "arrow-back-outline"
 msgstr "arrow-back-outline"
 
 msgid "Total employee objectives"
-msgstr "Загальна кількість цілей працівників"
+msgstr "Усього цілей працівників"
 
 msgid "Total key results"
-msgstr "Загальна кількість ключових результатів"
+msgstr "Усього ключових результатів"
 
 msgid "Total feedbacks"
-msgstr "Загальна кількість відгуків"
+msgstr "Усього відгуків"
 
 msgid "Objective status"
 msgstr "Статус цілі"
@@ -12311,7 +12311,7 @@ msgid "Awaiting review"
 msgstr "Очікує перегляду"
 
 msgid "Total leave balance"
-msgstr "Загальний баланс відпусток"
+msgstr "Баланс відпусток"
 
 msgid "Approved & ahead"
 msgstr "Затверджено й попереду"
@@ -12780,7 +12780,7 @@ msgid "Send via mail"
 msgstr "Надіслати поштою"
 
 msgid "Total Net Payable"
-msgstr "Загальна сума до виплати"
+msgstr "Усього до виплати"
 
 msgid "Gross Earnings - Total Deductions"
 msgstr "Валовий дохід - загальні утримання"
@@ -12807,7 +12807,7 @@ msgid "The payslip is calculated based on the updated basic pay"
 msgstr "Розрахунковий листок обчислюється на основі оновленої базової оплати"
 
 msgid "Taxable Gross Pay"
-msgstr "Оподатковувана валова заробітна плата"
+msgstr "Оподатковувана валова зарплата"
 
 msgid "Taxable amount"
 msgstr "сума, що оподатковується"
@@ -12972,7 +12972,7 @@ msgid "View Policy"
 msgstr "Переглянути політику"
 
 msgid " - Open Recruitments"
-msgstr " - Відкриті набори"
+msgstr " - відкриті набори"
 
 msgid "Open Job Listings"
 msgstr "Відкриті вакансії"
@@ -14098,10 +14098,10 @@ msgid "Required for value-based conditions such as gender"
 msgstr "Необхідно для умов, що ґрунтуються на цінностях, як-от стать"
 
 msgid "Leave Type Condition"
-msgstr "Залишити тип Умова"
+msgstr "Залишити тип умова"
 
 msgid "Leave Type Conditions"
-msgstr "Залишити Тип Умови"
+msgstr "Залишити тип умови"
 
 msgid ""
 "Specifies how leave days are paid: fully, half, unpaid, or custom percentage"
@@ -15057,7 +15057,7 @@ msgid "Resignation created successfully"
 msgstr "Звільнення успішно створено"
 
 msgid "Resignation"
-msgstr "Звільнення за власним бажанням"
+msgstr "Звільнення"
 
 msgid "Task To"
 msgstr "Завдання для"
@@ -16562,7 +16562,7 @@ msgid "installment Amount"
 msgstr "Сума платежу"
 
 msgid "Total installments"
-msgstr "Загальна кількість платежів"
+msgstr "Усього платежів"
 
 msgid "From the start date deduction will apply"
 msgstr "Від дати початку буде застосовано відрахування"
@@ -16785,7 +16785,7 @@ msgid " Update"
 msgstr "Оновити"
 
 msgid "Wage"
-msgstr "Заробітна плата"
+msgstr "Зарплата"
 
 msgid "Bulk Status Update"
 msgstr "Масове оновлення статусу"
@@ -16815,7 +16815,7 @@ msgid "Installments"
 msgstr "Платежі частинами"
 
 msgid "Total Installments"
-msgstr "Загальна кількість платежів"
+msgstr "Усього платежів"
 
 msgid "There are currently no loans to consider."
 msgstr "Наразі немає позик для розгляду."
@@ -17203,7 +17203,7 @@ msgid "Payslip auto generate not found."
 msgstr "Автоматичне формування розрахункового листа не знайдено."
 
 msgid "Performance"
-msgstr "Оцінювання ефективності"
+msgstr "Продуктивність"
 
 msgid "Progress Percentage"
 msgstr "Відсоток виконання"
@@ -18755,7 +18755,7 @@ msgid "Not Hired"
 msgstr "Не найнято"
 
 msgid "Hired"
-msgstr "Прийнято на роботу"
+msgstr "Прийнято"
 
 msgid "Convert to Employee"
 msgstr "Перетворити на працівника"
@@ -20157,7 +20157,7 @@ msgid "active recruitments"
 msgstr "активні вакансії"
 
 msgid "hired"
-msgstr "Прийнято на роботу"
+msgstr "прийнято"
 
 msgid "Failed to load recruitment data"
 msgstr "Не вдалося завантажити дані вакансії"
