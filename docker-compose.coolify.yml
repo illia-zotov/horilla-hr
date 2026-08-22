@@ -1,8 +1,23 @@
 # Self-contained production Compose file for Coolify.
 #
-# Coolify supplies the interpolated environment variables. No repository-local
-# .env file is required. Nginx remains the HTTP entrypoint because it serves
-# static files and proxies protected media requests to Django.
+# Routing: Coolify's Traefik terminates TLS and forwards plain HTTP to nginx:80.
+# The route is declared by the bare `SERVICE_URL_NGINX_80` entry in the nginx
+# service below -- that single magic variable is what tells Coolify which
+# container to publish and on which port. `web` deliberately has no
+# SERVICE_FQDN_*/SERVICE_URL_* of its own: two published services in one stack
+# is exactly what makes Traefik and nginx fight over the domain.
+#
+# Nginx stays the HTTP entrypoint because it serves /static/ and proxies
+# protected media requests to Django. It never binds a host port (`expose`,
+# not `ports`), so it cannot collide with Traefik on :80/:443.
+#
+# Secrets: use the bare "${VAR:?}" form for anything mandatory. Coolify marks
+# such variables required and blocks the deployment while they are empty.
+# Never write "${VAR:?some message}" -- Coolify treats the text after ":?" as a
+# PREFILLED DEFAULT VALUE, not an error message, so the stack would happily boot
+# with a secret whose value is a string committed to this repository.
+#
+# No repository-local .env file is required.
 
 services:
   web:
@@ -13,13 +28,26 @@ services:
       DEBUG: "0"
       HORILLA_ENV: production
       DB_HOST: db
-      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in Coolify}
-      ALLOWED_HOSTS: ${ALLOWED_HOSTS:?Set ALLOWED_HOSTS in Coolify}
-      CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:?Set CSRF_TRUSTED_ORIGINS in Coolify}
-      DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL in Coolify}
-      DB_INIT_PASSWORD: ${DB_INIT_PASSWORD:?Set DB_INIT_PASSWORD in Coolify}
-      REDIS_URL: ${REDIS_URL:?Set REDIS_URL in Coolify}
-      SECURE_SSL_REDIRECT: ${SECURE_SSL_REDIRECT:-0}
+      # python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+      SECRET_KEY: ${SECRET_KEY:?}
+      # The generated domain comes from nginx's SERVICE_URL_NGINX_80 declaration;
+      # ${SERVICE_FQDN_NGINX} is the bare host, ${SERVICE_URL_NGINX} the full URL
+      # with scheme -- which is exactly what each Django setting expects.
+      # localhost/127.0.0.1 are required by the container healthchecks: with
+      # DEBUG=0 Django does not whitelist them automatically, and CommonMiddleware
+      # answers the probe with 400 DisallowedHost if they are missing.
+      ALLOWED_HOSTS: ${SERVICE_FQDN_NGINX},localhost,127.0.0.1
+      CSRF_TRUSTED_ORIGINS: ${SERVICE_URL_NGINX}
+      DATABASE_URL: postgres://${POSTGRES_USER:-horilla_user}:${SERVICE_PASSWORD_POSTGRES}@db:5432/${POSTGRES_DB:-horilla_db}
+      # Password typed into the "load demo data" form in base/views.py -- it has
+      # to be a value you choose and remember, not a generated one.
+      DB_INIT_PASSWORD: ${DB_INIT_PASSWORD:?}
+      REDIS_URL: redis://:${SERVICE_PASSWORD_REDIS}@redis:6379/0
+      # Production settings already force Secure session/CSRF cookies, so this
+      # stack is HTTPS-only anyway. Set to 0 only if you serve it over plain HTTP.
+      SECURE_SSL_REDIRECT: ${SECURE_SSL_REDIRECT:-1}
+      TIME_ZONE: ${TIME_ZONE:-Europe/Kyiv}
+      GUNICORN_WORKERS: ${GUNICORN_WORKERS:-3}
       GUNICORN_LOG_LEVEL: ${GUNICORN_LOG_LEVEL:-info}
     volumes:
       - staticfiles:/app/staticfiles
@@ -41,45 +69,57 @@ services:
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-horilla_db}
       POSTGRES_USER: ${POSTGRES_USER:-horilla_user}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in Coolify}
+      POSTGRES_PASSWORD: ${SERVICE_PASSWORD_POSTGRES}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U horilla_user -d horilla_db"]
+      # $$ keeps Compose from interpolating: the shell inside the container
+      # expands these, so the probe always matches the credentials the container
+      # actually received, even after POSTGRES_USER/DB are changed in the UI.
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:?Set REDIS_PASSWORD in Coolify}
+    # SERVICE_PASSWORD_* values are generated symbol-free, so they stay safe to
+    # embed unescaped in REDIS_URL above.
+    command: redis-server --appendonly yes --requirepass ${SERVICE_PASSWORD_REDIS}
     volumes:
       - redis_data:/data
     healthcheck:
-      test:
-        [
-          "CMD",
-          "redis-cli",
-          "-a",
-          "${REDIS_PASSWORD:?Set REDIS_PASSWORD in Coolify}",
-          "ping",
-        ]
+      test: ["CMD", "redis-cli", "-a", "${SERVICE_PASSWORD_REDIS}", "ping"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   nginx:
     image: nginx:alpine
+    environment:
+      # The only published service in this stack. Bare (no "=value") on purpose:
+      # this form asks Coolify to generate the domain AND point Traefik at
+      # port 80 of this container. Consume it elsewhere as ${SERVICE_FQDN_NGINX}
+      # / ${SERVICE_URL_NGINX} -- without the port suffix, which would otherwise
+      # be appended to the value.
+      - SERVICE_URL_NGINX_80
     expose:
       - "80"
     volumes:
-      # Static only — /media/ is proxied to Django (protected_media). Do not
+      # Static only -- /media/ is proxied to Django (protected_media). Do not
       # mount the media volume here; an alias location would bypass auth.
       - staticfiles:/static:ro
       - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       web:
         condition: service_healthy
+    healthcheck:
+      # End-to-end: nginx -> web. Relies on 127.0.0.1 being in ALLOWED_HOSTS.
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/health/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 3
 
 volumes:
   staticfiles:
