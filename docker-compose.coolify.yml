@@ -1,0 +1,88 @@
+# Self-contained production Compose file for Coolify.
+#
+# Coolify supplies the interpolated environment variables. No repository-local
+# .env file is required. Nginx remains the HTTP entrypoint because it serves
+# static files and proxies protected media requests to Django.
+
+services:
+  web:
+    build: .
+    expose:
+      - "8000"
+    environment:
+      DEBUG: "0"
+      HORILLA_ENV: production
+      DB_HOST: db
+      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in Coolify}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:?Set ALLOWED_HOSTS in Coolify}
+      CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:?Set CSRF_TRUSTED_ORIGINS in Coolify}
+      DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL in Coolify}
+      DB_INIT_PASSWORD: ${DB_INIT_PASSWORD:?Set DB_INIT_PASSWORD in Coolify}
+      REDIS_URL: ${REDIS_URL:?Set REDIS_URL in Coolify}
+      SECURE_SSL_REDIRECT: ${SECURE_SSL_REDIRECT:-0}
+      GUNICORN_LOG_LEVEL: ${GUNICORN_LOG_LEVEL:-info}
+    volumes:
+      - staticfiles:/app/staticfiles
+      - media:/app/media
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 30s
+      start_period: 60s
+      retries: 3
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-horilla_db}
+      POSTGRES_USER: ${POSTGRES_USER:-horilla_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in Coolify}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U horilla_user -d horilla_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:?Set REDIS_PASSWORD in Coolify}
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "redis-cli",
+          "-a",
+          "${REDIS_PASSWORD:?Set REDIS_PASSWORD in Coolify}",
+          "ping",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  nginx:
+    image: nginx:alpine
+    expose:
+      - "80"
+    volumes:
+      # Static only — /media/ is proxied to Django (protected_media). Do not
+      # mount the media volume here; an alias location would bypass auth.
+      - staticfiles:/static:ro
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      web:
+        condition: service_healthy
+
+volumes:
+  staticfiles:
+  media:
+  postgres_data:
+  redis_data:
